@@ -1,22 +1,23 @@
-package br.com.devxavierr.catalogoproduto.domain.category;
+package br.com.devxavierr.catalogoproduto.domain.product;
 
+import br.com.devxavierr.catalogoproduto.domain.category.Category;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Collection;
-
-@Document(collection = "categories")
+@Document(collection = "products")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Category {
+public class Product {
     @Id
     private String id;
     private String title;
     private String description;
     private String ownerId;
+    private Integer price;
+    private Category category;
 
 }
