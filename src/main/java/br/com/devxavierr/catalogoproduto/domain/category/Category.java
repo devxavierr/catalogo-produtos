@@ -6,8 +6,6 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Collection;
-
 @Document(collection = "categories")
 @Getter
 @Setter
@@ -18,5 +16,11 @@ public class Category {
     private String title;
     private String description;
     private String ownerId;
+
+    public Category(CategoryDTO categoryDTO){
+        this.title = categoryDTO.title();
+        this.description = categoryDTO.description();
+        this.ownerId = categoryDTO.ownerId();
+    }
 
 }
